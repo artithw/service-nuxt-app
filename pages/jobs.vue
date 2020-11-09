@@ -162,7 +162,7 @@
           <div class="control">
             <button class="button is-primary">บันทึก</button>
           </div>
-          <div>test: {{ status[0].name }}</div>
+          <div>test: {{ status[0] }}</div>
         </div>
       </div>
     </div>
@@ -179,11 +179,12 @@ export default {
   data() {
     return {
       jobs: {},
-      status: [
-        { id: 1, name: 'เรียบร้อย' },
-        { id: 2, name: 'รออุปกรณ์' },
-        { id: 3, name: 'แก้ไขไม่ได้' },
-      ],
+      // status: [
+      //   { id: 1, name: 'เรียบร้อย' },
+      //   { id: 2, name: 'รออุปกรณ์' },
+      //   { id: 3, name: 'แก้ไขไม่ได้' },
+      // ],
+      status: ['เรียบร้อย', 'รออุปกรณ์', 'แก้ไขไม่ได้'],
     }
   },
   head() {
