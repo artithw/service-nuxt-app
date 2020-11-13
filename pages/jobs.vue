@@ -65,11 +65,15 @@
         <div class="field is-narrow">
           <div class="control">
             <div class="select is-fullwidth">
-              <select>
-                <option>สำนักงานวิทยาเขต</option>
-                <option>คณะครุศาสตร์อุตสาหกรรม</option>
-                <option>คณะวิศวกรรมศาตร์</option>
-                <option>คณะบริหารธุรกิจและเทคโนโลยีสารสนเทศ</option>
+              <select v-model="jobs.data.institute">
+                <option value="สำนักงานวิทยาเขต">สำนักงานวิทยาเขต</option>
+                <option value="คณะครุศาสตร์อุตสาหกรรม">
+                  คณะครุศาสตร์อุตสาหกรรม
+                </option>
+                <option value="คณะวิศวกรรมศาตร์">คณะวิศวกรรมศาตร์</option>
+                <option value="คณะบริหารธุรกิจและเทคโนโลยีสารสนเทศ">
+                  คณะบริหารธุรกิจและเทคโนโลยีสารสนเทศ
+                </option>
               </select>
             </div>
           </div>
@@ -84,13 +88,13 @@
         <div class="field is-narrow">
           <div class="control">
             <div class="select is-fullwidth">
-              <select>
-                <option>กองทุน</option>
-                <option>เบิกจ่าย</option>
-                <option>การเงิน</option>
-                <option>พัสดุ</option>
-                <option>ทะเบียน</option>
-                <option>เลขา</option>
+              <select v-model="jobs.data.department">
+                <option value="กองทุน">กองทุน</option>
+                <option value="เบิกจ่าย">เบิกจ่าย</option>
+                <option value="การเงิน">การเงิน</option>
+                <option value="พัสดุ">พัสดุ</option>
+                <option value="ทะเบียน">ทะเบียน</option>
+                <option value="เลขา">เลขา</option>
               </select>
             </div>
           </div>
@@ -125,7 +129,7 @@
         <div class="field">
           <div class="control">
             <textarea
-              v-model="status.name"
+              v-model="jobs.data.fixdetail"
               class="textarea"
               placeholder="รายละเอียด การแก้ไข"
             ></textarea>
@@ -142,10 +146,10 @@
         <div class="field is-narrow">
           <div class="control">
             <div class="select is-fullwidth">
-              <select>
-                <option>เรียบร้อย</option>
-                <option>รออุปกรณ์</option>
-                <option>แก้ไขไม่ได้</option>
+              <select v-model="jobs.data.fixstatus">
+                <option value="เรียบร้อย">เรียบร้อย</option>
+                <option value="รออุปกรณ์">รออุปกรณ์</option>
+                <option value="แก้ไขไม่ได้">แก้ไขไม่ได้</option>
               </select>
             </div>
           </div>
@@ -160,9 +164,10 @@
       <div class="field-body">
         <div class="field">
           <div class="control">
-            <button class="button is-primary">บันทึก</button>
+            <button class="button is-primary">
+              บันทึก {{ $route.params.id }}
+            </button>
           </div>
-          <div>test: {{ status[0] }}</div>
         </div>
       </div>
     </div>
@@ -171,7 +176,7 @@
 <script>
 export default {
   async asyncData({ $axios }) {
-    const jobs = await $axios.$get('http://localhost:3030/api/fixlog/1')
+    const jobs = await $axios.$get('http://localhost:3030/api/fixlog/3')
     // eslint-disable-next-line
     //console.log(jobs.data)
     return { jobs }

@@ -59,7 +59,7 @@
         </ul>
       </aside>
 
-      <div class="container column is-10">
+      <div class="container column is-10" style="margin-left: 0px">
         <nuxt />
       </div>
     </section>
