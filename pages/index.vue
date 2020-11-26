@@ -23,17 +23,20 @@
         <b class="has-text-grey"> หน่วยงานที่ใช้บริการสูงสุด </b>
       </card>
     </div>
+    <AddForm />
   </section>
 </template>
 
 <script>
 import Card from '~/components/Card'
+import AddForm from '~/components/Header/ModalLogin'
 
 export default {
   name: 'HomePage',
 
   components: {
     Card,
+    AddForm,
   },
   async asyncData({ $axios }) {
     const jobs = await $axios.$get('http://localhost:3030/api/fixlog')
