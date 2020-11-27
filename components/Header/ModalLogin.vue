@@ -7,14 +7,14 @@
 </template>
 
 <script>
-import MenuList from '~/components/ModalForm/AddForm'
+import AddForm from '~/components/ModalForm/AddLog'
 
 export default {
   methods: {
     cardModal() {
       this.$buefy.modal.open({
         parent: this,
-        component: MenuList,
+        component: AddForm,
         hasModalCard: true,
         customClass: 'custom-class custom-class-2',
         trapFocus: true,

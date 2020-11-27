@@ -30,16 +30,13 @@
     </footer>
   </div>
 </template>
-
 <script>
 export default {
   data() {
     return {
       isComponentModalActive: false,
-      formProps: {
-        email: 'evan@you.com',
-        password: 'testing',
-      },
+      email: 'evan@you.com',
+      password: 'testing',
     }
   },
 }
