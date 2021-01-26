@@ -34,7 +34,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: ['~plugins/buefy.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -52,7 +52,7 @@ export default {
    */
   modules: [
     // Doc: https://buefy.github.io/#/documentation
-    'nuxt-buefy',
+    // 'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
   ],

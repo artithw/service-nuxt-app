@@ -1,15 +1,14 @@
 <template>
-  <div class="modal-card" style="width: 840">
+  <div class="modal-card" style="width: 840" full-screen>
     <header class="modal-card-head">
       <p class="modal-card-title">บันทึกงาน</p>
     </header>
     <section class="modal-card-body">
-      <h2 class="subtitle">บันทึกรายละเอียดการให้บริการ</h2>
       <b-field label="เรื่อง">
         <b-input></b-input>
       </b-field>
       <b-field label="รายละเอียด">
-        <b-input></b-input>
+        <b-input maxlength="200" type="textarea"></b-input>
       </b-field>
       <b-field label="ผู้รับบริการ">
         <b-input></b-input>
@@ -42,7 +41,7 @@
         <b-input></b-input>
       </b-field>
       <b-field label="รายละเอียด">
-        <b-input></b-input>
+        <b-input maxlength="200" type="textarea"></b-input>
       </b-field>
       <b-field label="สถานะ">
         <b-select v-model="status" placeholder="Select a status" required>
@@ -56,7 +55,7 @@
       <button class="button" type="button" @click="$parent.close()">
         Close
       </button>
-      <button class="button is-primary">บันทึก</button>
+      <button class="button is-info">บันทึก</button>
     </footer>
   </div>
 </template>

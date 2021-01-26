@@ -19,3 +19,6 @@ export default {
   components: { Header, MenuList },
 }
 </script>
+<style lang="scss">
+@import '~assets/styles/main.scss';
+</style>
